@@ -1,6 +1,7 @@
 :root {
     --header-main: #080B12;
     --main-color: #141922;
+    --aside-color: #000000;
     --footer-color: #282828;
     --color-font-secondary: #797C80;
     --color-font-primary: white;
@@ -10,7 +11,6 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    border: 1px solid red;
 }
 
 body {
@@ -24,8 +24,8 @@ body {
 
 /* SOLO TEMPORANEAMENTE perché non c'è contenuto.
   poi sarà da togliere */
-body>*,
-.main-container>* {
+
+.play-nav-container {
     min-width: 100px;
     min-height: 100px;
     border: 1px solid red;
@@ -46,11 +46,85 @@ body>*,
     overflow: auto;
 }
 
+/* aside */
 .navbar {
     width: 200px;
     overflow: auto;
     flex-shrink: 0;
+    color: var(--color-font-secondary);
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    background-color: var(--aside-color);
+    padding: 1rem;
 }
+
+.navbar .logo-small {
+    display: none;
+}
+
+.navbar h4 {
+    color: var(--color-font-primary);
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    color: var(--color-font-secondary);
+}
+
+.navbar .nav-librabry {
+    flex-grow: 1;
+    overflow: auto;
+}
+
+.navbar li {
+    padding: 0.3rem 0;
+}
+
+.navbar ul {
+    list-style: none;
+}
+
+.nav-librabry ul {
+    padding: 0.3rem 0;
+}
+
+
+#color-white {
+    color: var(--color-font-primary);
+}
+
+.inline {
+    display: inline;
+}
+
+/* aside icon */
+
+.fa-plus {
+    background-color: var(--color-font-secondary);
+    padding: 0.6rem;
+    color: var(--aside-color);
+    font-size: 1.5rem;
+}
+
+.fa-plus:hover {
+    color: var(--color-font-primary);
+}
+
+ul li i {
+    font-size: 1.5rem;
+}
+
+ul li a:hover {
+    color: var(--color-font-primary);
+}
+
+/* .fa-house,
+.fa-magnifying-glass,
+.fa-lines-leaning,
+.fa-circle-chevron-down:hover{
+    color: var(--color-font-primary);
+} */
 
 /* header */
 header {
@@ -60,7 +134,7 @@ header {
 .header-btn {
     display: flex;
     justify-content: right;
-    padding: 0.5rem;
+    padding: 1rem;
 }
 
 .btn {
@@ -69,19 +143,18 @@ header {
     padding: 0.5rem 2rem;
     color: var(--color-font-primary);
     border-radius: 50px;
-    font-size: 10px;
 }
 
 
 
 /* section del main */
 
-.bg-color-main {
+.main-content-container {
     background-color: var(--main-color);
     color: var(--color-font-primary);
 }
 
-ul {
+.horizontal-menu-bar ul {
     list-style: none;
     display: flex;
     justify-content: center;
@@ -95,6 +168,15 @@ section {
     max-width: 100%;
     margin: 1.5rem 0;
     padding: 0 1rem;
+}
+
+.col-container #special-h2 {
+    padding-bottom: 0.6rem;
+}
+
+.padding {
+    padding: 0.2rem 0 1rem;
+    ;
 }
 
 .row {
@@ -116,8 +198,17 @@ section {
     flex-grow: 0;
 }
 
+.circle img {
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+}
+
 img {
     max-width: 100%;
+}
+
+.row .text {
+    text-align: center;
 }
 
 .small-font-size {
@@ -125,12 +216,15 @@ img {
     color: var(--color-font-secondary);
 }
 
+
+
 /* media query */
 
 @media (max-width: 1100px) {
-    .col{
+    .col {
         flex-grow: 0;
     }
+
     .col-1-6 {
         flex-basis: calc((100% /4) - 1rem);
     }
@@ -138,9 +232,9 @@ img {
 }
 
 @media (max-width: 992px) {
-    .col-1-6 {
+    /* .col-1-6 {
         flex-basis: calc((100% /3) - 1rem);
-    }
+    } */
 }
 
 @media (max-width: 768px) {
@@ -148,6 +242,29 @@ img {
         flex-basis: calc((100% /2) - 1rem);
     }
 }
+
+@media (max-width: 600px) {
+    .navbar {
+        width: auto;
+    }
+
+    .navbar span {
+        display: none;
+    }
+
+    .navbar .nav-librabry h4 {
+        display: none;
+    }
+
+    .navbar .logo-big {
+        display: none;
+    }
+
+    .navbar .logo-small {
+        display: block;
+    }
+}
+
 
 @media (max-width: 480px) {
     .col-1-6 {
