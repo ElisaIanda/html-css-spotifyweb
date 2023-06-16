@@ -1,0 +1,156 @@
+:root {
+    --header-main: #080B12;
+    --main-color: #141922;
+    --footer-color: #282828;
+    --color-font-secondary: #797C80;
+    --color-font-primary: white;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: 1px solid red;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    height: 100vh;
+    /* per evitare che in caso di errore nei figli compaia la scrollbar generale, la nascondiamo di default */
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+/* SOLO TEMPORANEAMENTE perché non c'è contenuto.
+  poi sarà da togliere */
+body>*,
+.main-container>* {
+    min-width: 100px;
+    min-height: 100px;
+    border: 1px solid red;
+}
+
+.play-nav-container {
+    flex-shrink: 0;
+}
+
+.main-container {
+    flex-grow: 1;
+    overflow: auto;
+    display: flex;
+}
+
+.main-content-container {
+    flex-grow: 1;
+    overflow: auto;
+}
+
+.navbar {
+    width: 200px;
+    overflow: auto;
+    flex-shrink: 0;
+}
+
+/* header */
+header {
+    background-color: var(--header-main);
+}
+
+.header-btn {
+    display: flex;
+    justify-content: right;
+    padding: 0.5rem;
+}
+
+.btn {
+    border: 1px solid var(--color-font-primary);
+    background-color: var(--header-main);
+    padding: 0.5rem 2rem;
+    color: var(--color-font-primary);
+    border-radius: 50px;
+    font-size: 10px;
+}
+
+
+
+/* section del main */
+
+.bg-color-main {
+    background-color: var(--main-color);
+    color: var(--color-font-primary);
+}
+
+ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    color: var(--color-font-secondary);
+    padding: 1rem 4rem;
+}
+
+section {
+    max-width: 100%;
+    margin: 1.5rem 0;
+    padding: 0 1rem;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.col {
+    flex-basis: 0;
+    flex-grow: 1;
+}
+
+.col-1-6 {
+    flex-basis: calc((100% /6) - 1rem);
+}
+
+.flex-grow {
+    flex-grow: 0;
+}
+
+img {
+    max-width: 100%;
+}
+
+.small-font-size {
+    font-size: 0.8rem;
+    color: var(--color-font-secondary);
+}
+
+/* media query */
+
+@media (max-width: 1100px) {
+    .col{
+        flex-grow: 0;
+    }
+    .col-1-6 {
+        flex-basis: calc((100% /4) - 1rem);
+    }
+
+}
+
+@media (max-width: 992px) {
+    .col-1-6 {
+        flex-basis: calc((100% /3) - 1rem);
+    }
+}
+
+@media (max-width: 768px) {
+    .col-1-6 {
+        flex-basis: calc((100% /2) - 1rem);
+    }
+}
+
+@media (max-width: 480px) {
+    .col-1-6 {
+        flex-basis: calc((100% /1) - 1rem);
+    }
+}
