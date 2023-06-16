@@ -16,18 +16,12 @@
 body {
     font-family: Arial, Helvetica, sans-serif;
     height: 100vh;
-    /* per evitare che in caso di errore nei figli compaia la scrollbar generale, la nascondiamo di default */
     overflow: hidden;
     display: flex;
     flex-direction: column;
 }
 
-/* SOLO TEMPORANEAMENTE perché non c'è contenuto.
-  poi sarà da togliere */
-
 .play-nav-container {
-    min-width: 100px;
-    min-height: 100px;
     border: 1px solid red;
 }
 
@@ -56,7 +50,10 @@ body {
     flex-direction: column;
     gap: 2rem;
     background-color: var(--aside-color);
-    padding: 1rem;
+}
+
+.padding-01 {
+    padding: 0 1rem;
 }
 
 .navbar .logo-small {
@@ -89,6 +86,13 @@ body {
     padding: 0.3rem 0;
 }
 
+.border-green {
+    border-left: 2px solid #adff2f;
+    height: 35px;
+    width: 1px;
+    margin-bottom: -36px;
+    margin-left: -15px;
+}
 
 #color-white {
     color: var(--color-font-primary);
@@ -143,6 +147,10 @@ header {
     padding: 0.5rem 2rem;
     color: var(--color-font-primary);
     border-radius: 50px;
+}
+
+.btn:hover {
+    font-size: 1rem;
 }
 
 
@@ -207,6 +215,27 @@ img {
     max-width: 100%;
 }
 
+.img:hover {
+    content: "";
+    filter: grayscale(100%) sepia(30%);
+
+}
+
+.relative{
+    position: relative;
+}
+
+.col .relative i{
+    display: none;
+    position: absolute;
+    top: calc(50% - 20px);;
+    right: calc(50% - 20px);;
+}
+
+.img:hover i{
+    display: block;
+}
+
 .row .text {
     text-align: center;
 }
@@ -215,6 +244,93 @@ img {
     font-size: 0.8rem;
     color: var(--color-font-secondary);
 }
+
+/* footer */
+/* da eliminare */
+.play-nav-container>* {
+    border: 1px solid red;
+
+}
+
+.play-nav-container {
+    background-color: var(--footer-color);
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    gap: 1.5rem;
+    color: var(--color-font-primary);
+}
+
+.play-nav-container .play-nav-center {
+    flex-grow: 1;
+    overflow: hidden;
+}
+
+.play-nav-left .left-img {
+    max-width: 25%;
+}
+
+.play-nav-left {
+    display: flex;
+    align-items: center;
+    gap: 1.3rem;
+}
+
+.left-icon {
+    display: flex;
+    gap: 1rem;
+}
+
+.play-nav-center {
+    text-align: center;
+}
+
+.play-nav-center .play-nav-center-icon {
+    font-size: 1.7rem;
+    display: flex;
+    justify-content: center;
+    gap: 2.3rem;
+    align-items: center;
+}
+
+.fa-circle-play {
+    font-size: 2.5rem;
+}
+
+.play-nav-center .play-nav-center-music {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1.3rem;
+}
+
+.play-nav-left,
+.play-nav-right {
+    width: 20%;
+}
+
+.play-nav-right .icon-right {
+    display: flex;
+    align-items: center;
+    font-size: 1.2rem;
+    gap: 1rem;
+}
+
+.icon-right hr,
+.play-nav-center-music hr {
+    width: 40%;
+    height: 2%;
+}
+
+.play-nav-center-music hr {
+    width: 60%;
+    height: 2%;
+}
+
+
+
+
 
 
 
@@ -241,6 +357,23 @@ img {
     .col-1-6 {
         flex-basis: calc((100% /2) - 1rem);
     }
+
+    .play-nav-left .left-icon {
+        flex-direction: column;
+    }
+
+    .play-nav-center .play-nav-center-icon {
+        gap: 2rem;
+        font-size: 1.2rem;
+    }
+
+    .fa-circle-play {
+        font-size: 2rem;
+    }
+
+    .play-nav-right .icon-right {
+        font-size: 0.8rem;
+    }
 }
 
 @media (max-width: 600px) {
@@ -262,6 +395,15 @@ img {
 
     .navbar .logo-small {
         display: block;
+    }
+
+    .play-nav-center .play-nav-center-icon {
+        gap: 1.2rem;
+        font-size: 1rem;
+    }
+
+    @media (max-width: 768px) .fa-circle-play {
+        font-size: 1.8rem;
     }
 }
 
