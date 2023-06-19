@@ -245,9 +245,11 @@ img {
     display: none;
     position: absolute;
     top: calc(50% - 20px);
-    ;
     right: calc(50% - 20px);
-    ;
+}
+
+.col .relative .fa-circle-play {
+    font-size: 40px;
 }
 
 .img:hover i {
@@ -301,7 +303,7 @@ img {
 }
 
 .font-10px:hover {
-    color: white;
+    color: var(--color-font-primary);
     text-decoration: underline;
 }
 
@@ -315,7 +317,7 @@ img {
 }
 
 .secondary-color i:hover {
-    color: white;
+    color: var(--color-font-primary);
 }
 
 .play-nav-center {
@@ -331,11 +333,11 @@ img {
     align-items: center;
 }
 
-.fa-circle-play {
+.play-nav-center .fa-circle-play {
     font-size: 24px;
 }
 
-.fa-circle-play:hover {
+.play-nav-center .fa-circle-play:hover {
     transform: scale(1.2);
 }
 
