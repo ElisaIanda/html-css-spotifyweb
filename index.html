@@ -9,6 +9,7 @@
         crossorigin="anonymous" referrerpolicy="no-referrer">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="img/favicon.ico" href="">
     <title>Spotify</title>
 </head>
 
@@ -78,7 +79,7 @@
                 <ul>
                     <li>
                         <i class="fa-solid fa-circle-chevron-down"></i>
-                        <span><a href="#">Installa l'app</a></span>
+                        <span class="small-font-size"><a href="#">Installa l'app</a></span>
                     </li>
                     <hr>
                     <li>
@@ -101,7 +102,9 @@
 
             <div class="horizontal-menu-bar">
                 <ul>
-                    <li><a href="#"></a> IN EVIDENZA</li>
+                    <li><a href="#"></a> IN EVIDENZA
+                        <hr>
+                    </li>
                     <li><a href="#"></a>PODCAST</li>
                     <li><a href="#"></a>CLASSIFICHE</li>
                     <li><a href="#"></a>GENERI E MOOD</li>
@@ -236,17 +239,20 @@
     </div>
 
     <!-- Barra in basso per pulsanti play -->
+    
     <div class="play-nav-container">
 
         <div class="play-nav-left">
-            <div class="left-img">
-                <img src="img/sinister.jpeg" alt="">
+            <div class="play-nav-left-card">
+                <div class="left-img">
+                    <img src="img/sinister.jpeg" alt="">
+                </div>
+                <div class="left-text">
+                    <h5>Sinister</h6>
+                    <div class="font-10px secondary-color">Brano nome</div>
+                </div>
             </div>
-            <div class="left-text">
-                <h6>Sinister</h6>
-                <div>Brano nome</div>
-            </div>
-            <div class="left-icon">
+            <div class="left-icon secondary-color">
                 <i class="fa-regular fa-heart"></i>
                 <i class="fa-regular fa-folder"></i>
             </div>
@@ -263,7 +269,13 @@
 
             <div class=" play-nav-center-music">
                 <span>0.25</span>
-                <hr>
+                <div class="audio percentuale">
+                    <div class="audio-color">
+                        <div class="circle-audio">
+                            <i class="fa-solid fa-circle"></i>
+                        </div>
+                    </div>
+                </div>
                 <span>4.35</span>
 
             </div>
@@ -275,7 +287,14 @@
                 <i class="fa-solid fa-list"></i>
                 <i class="fa-solid fa-tv"></i>
                 <i class="fa-solid fa-volume-high"></i>
-                <hr>
+                <!-- <hr> -->
+                <div class="audio">
+                    <div class="audio-color">
+                        <div class="circle-audio font-10px">
+                            <i class="fa-solid fa-circle"></i>
+                        </div>
+                    </div>
+                </div>
             </div>
 
         </div>
